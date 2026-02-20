@@ -66,50 +66,54 @@ body {
     color: #999; /* Subtle grey hover */
 }
 
-/* 1. First, make sure we hide the mobile-only stuff by default (Desktop) */
-.mobile-only {
+/* Button Style */
+.book-btn {
+    padding: 12px 25px;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* Mobile Responsiveness */
+.menu-toggle {
     display: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-/* 2. Adjust the Desktop Button appearance */
-.nav-cta.desktop-only {
-    display: block; /* Ensure it shows on desktop */
-}
-
-/* 3. Update the Media Query to handle the "Switch" */
 @media (max-width: 768px) {
-    /* Hide the desktop button on mobile */
-    .desktop-only { 
-        display: none !important; 
-    }
+    .desktop-only { display: none; }
     
-    /* Show the mobile version inside the menu */
-    .mobile-only {
-        display: block;
-    }
-
-    .menu-toggle { 
-        display: block; 
-    }
+    .menu-toggle { display: block; }
 
     .nav-links {
         position: absolute;
-        top: 0; 
-        left: 0;
-        width: 100%;
-        background-color: #ffffff;
+        top: 90px;
+        left: -100%; /* Hide off-screen */
         flex-direction: column;
-        padding: 20px 0 40px 0;
+        background-color: #ffffff;
+        width: 100%;
+        height: calc(100vh - 90px);
+        transition: 0.4s;
+        padding-top: 50px;
         text-align: center;
-        border-bottom: 1px solid #eeeeee;
-        transition: transform 0.5s ease-in-out, opacity 0.3s ease;
-        transform: translateY(-100%); 
-        opacity: 0;
-        z-index: -1; 
+        border-top: 1px solid #eee;
     }
 
     .nav-links.active {
-        transform: translateY(90px); 
-        opacity: 1;
+        left: 0; /* Slide in */
+    }
+
+    .nav-links li {
+        margin: 25px 0;
     }
 }

@@ -1,6 +1,11 @@
-const menuBtn = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+const hamburger = document.getElementById('hamburger-icon');
+const navMenu = document.getElementById('nav-menu');
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Change icon from Bars to X
+    const icon = hamburger.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
 });

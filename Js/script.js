@@ -1,11 +1,11 @@
-const hamburger = document.getElementById('hamburger-btn');
-const navMenu = document.getElementById('nav-links');
+const hamMenu = document.getElementById('ham-menu');
+const mobileDropdown = document.getElementById('mobile-dropdown');
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+hamMenu.addEventListener('click', () => {
+    mobileDropdown.classList.toggle('show-menu');
     
-    // Change icon from Bars to X
-    const icon = hamburger.querySelector('i');
+    // Toggle icon between bars and X
+    const icon = hamMenu.querySelector('i');
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-xmark');
 });

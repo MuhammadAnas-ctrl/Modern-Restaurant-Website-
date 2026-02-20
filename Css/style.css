@@ -6,18 +6,18 @@
 }
 
 body {
-    font-family: 'Playfair Display', serif; /* Classic elegant font */
-    background-color: #0c0c0c; /* Deep dark background */
-    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff; /* Pure White Theme */
+    color: #1a1a1a;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: rgba(12, 12, 12, 0.95);
-    height: 80px;
+    background-color: #ffffff;
+    height: 90px;
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #333; /* Subtle divider */
+    border-bottom: 1px solid #eeeeee; /* Very subtle line */
     position: fixed;
     width: 100%;
     top: 0;
@@ -26,7 +26,7 @@ body {
 
 .nav-container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -34,48 +34,86 @@ body {
 }
 
 .logo a {
-    font-size: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
     font-weight: 700;
-    color: #d4af37; /* Gold color typical of steakhouse themes */
+    color: #1a1a1a;
     text-decoration: none;
-    letter-spacing: 4px;
+    letter-spacing: 6px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 .nav-links li {
-    margin: 0 20px;
+    margin-left: 40px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #ffffff;
-    font-size: 14px;
+    color: #1a1a1a;
+    font-size: 13px;
+    font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: color 0.3s ease;
+    transition: 0.3s;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: #d4af37;
+    color: #999; /* Subtle grey hover */
 }
 
-/* Call to Action Button */
+/* Button Style */
 .book-btn {
-    padding: 10px 20px;
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    padding: 12px 25px;
+    border: 1px solid #1a1a1a;
+    color: #1a1a1a;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 12px;
-    letter-spacing: 1px;
+    font-size: 11px;
+    letter-spacing: 2px;
     transition: all 0.3s ease;
 }
 
 .book-btn:hover {
-    background-color: #d4af37;
-    color: #000;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+/* Mobile Responsiveness */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .desktop-only { display: none; }
+    
+    .menu-toggle { display: block; }
+
+    .nav-links {
+        position: absolute;
+        top: 90px;
+        left: -100%; /* Hide off-screen */
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        height: calc(100vh - 90px);
+        transition: 0.4s;
+        padding-top: 50px;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-links.active {
+        left: 0; /* Slide in */
+    }
+
+    .nav-links li {
+        margin: 25px 0;
+    }
 }

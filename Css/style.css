@@ -1,4 +1,4 @@
-/* --- Global Reset --- */
+/* --- Basic Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
-    color: #1a1a1a;
 }
 
 /* --- Navbar Container --- */
@@ -33,25 +32,24 @@ body {
     align-items: center;
 }
 
-/* --- Logo --- */
 .logo a {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     color: #000;
     text-decoration: none;
 }
 
-/* --- DESKTOP LINKS (Forced Visible) --- */
+/* --- DESKTOP NAVIGATION (Visible by default) --- */
 .nav-links {
-    display: flex !important; /* Force them to show */
+    display: flex; 
     list-style: none;
     align-items: center;
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .nav-links a {
@@ -62,61 +60,58 @@ body {
     letter-spacing: 1px;
 }
 
-/* --- DESKTOP BUTTON --- */
 .book-btn {
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: 1px solid #000;
     color: #000;
     text-decoration: none;
     font-size: 11px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    transition: 0.3s;
 }
 
-/* HIDE THESE ON DESKTOP */
-.menu-toggle {
-    display: none !important; 
-}
-.mobile-only-item {
-    display: none !important;
+/* Hide Mobile Elements on Desktop */
+.hamburger, .mobile-btn-container {
+    display: none;
 }
 
-/* --- MOBILE RULES (Only starts at 992px and below) --- */
+/* --- MOBILE RESPONSIVENESS (Below 992px) --- */
 @media screen and (max-width: 992px) {
     
-    .menu-toggle {
-        display: block !important; /* Hamburger only shows here */
+    .desktop-btn-container {
+        display: none; /* Hide the extra button */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger */
+        font-size: 24px;
         cursor: pointer;
     }
 
-    .nav-cta.desktop-only {
-        display: none !important;
+    .mobile-btn-container {
+        display: block; /* Show button inside the slide-out menu */
+        margin-top: 30px;
     }
 
     .nav-links {
-        display: flex !important;
         position: fixed;
         top: 0;
-        left: -100%; /* Slide out of view */
+        left: -100%; /* Hide to the left */
+        width: 75%;
+        height: 100vh;
+        background-color: #ffffff;
         flex-direction: column;
         justify-content: center;
-        width: 280px;
-        height: 100vh;
-        background: #fff;
+        transition: 0.5s ease-in-out;
         box-shadow: 10px 0 20px rgba(0,0,0,0.1);
-        transition: 0.4s;
     }
 
-    /* Slide in when active */
+    /* Active state to slide in */
     .nav-links.active {
         left: 0;
     }
 
     .nav-links li {
         margin: 20px 0;
-    }
-
-    .mobile-only-item {
-        display: block !important;
     }
 }

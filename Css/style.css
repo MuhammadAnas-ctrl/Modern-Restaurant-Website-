@@ -11,18 +11,17 @@ body {
     color: #1a1a1a;
 }
 
-/* --- Navbar Core --- */
+/* --- Navbar Container --- */
 .navbar {
     background-color: #ffffff;
-    height: 80px;
+    height: 90px;
     width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
-    border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #eee;
 }
 
 .nav-container {
@@ -34,18 +33,19 @@ body {
     align-items: center;
 }
 
+/* --- Logo --- */
 .logo a {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 3px;
     color: #000;
     text-decoration: none;
 }
 
-/* --- Desktop View (Standard) --- */
+/* --- DESKTOP LINKS (Forced Visible) --- */
 .nav-links {
-    display: flex; /* Forces links to show in a line on desktop */
+    display: flex !important; /* Force them to show */
     list-style: none;
     align-items: center;
 }
@@ -57,73 +57,66 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #000;
-    font-size: 12px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* The "Book" Button */
+/* --- DESKTOP BUTTON --- */
 .book-btn {
-    padding: 10px 18px;
+    padding: 10px 20px;
     border: 1px solid #000;
     color: #000;
     text-decoration: none;
     font-size: 11px;
     text-transform: uppercase;
     transition: 0.3s;
-    white-space: nowrap;
 }
 
-.book-btn:hover {
-    background: #000;
-    color: #fff;
+/* HIDE THESE ON DESKTOP */
+.menu-toggle {
+    display: none !important; 
+}
+.mobile-only-item {
+    display: none !important;
 }
 
-/* Hide mobile-only stuff on Desktop */
-.menu-toggle, .mobile-only-item {
-    display: none;
-}
-
-/* --- Mobile View (Responsive) --- */
-@media (max-width: 992px) {
-    /* Hide the normal desktop button */
-    .nav-cta.desktop-only {
-        display: none;
-    }
-
-    /* Show the hamburger icon */
+/* --- MOBILE RULES (Only starts at 992px and below) --- */
+@media screen and (max-width: 992px) {
+    
     .menu-toggle {
-        display: block;
+        display: block !important; /* Hamburger only shows here */
         cursor: pointer;
-        font-size: 20px;
     }
 
-    /* Show the button inside the mobile drawer */
-    .mobile-only-item {
-        display: block;
-        margin-top: 20px;
+    .nav-cta.desktop-only {
+        display: none !important;
     }
 
-    /* The Side Drawer */
     .nav-links {
+        display: flex !important;
         position: fixed;
         top: 0;
-        left: -100%; /* Hidden */
+        left: -100%; /* Slide out of view */
+        flex-direction: column;
+        justify-content: center;
         width: 280px;
         height: 100vh;
         background: #fff;
-        flex-direction: column;
-        justify-content: center;
-        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-        transition: 0.4s ease;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        transition: 0.4s;
     }
 
-    /* When clicked, it slides in */
+    /* Slide in when active */
     .nav-links.active {
         left: 0;
     }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 20px 0;
+    }
+
+    .mobile-only-item {
+        display: block !important;
     }
 }

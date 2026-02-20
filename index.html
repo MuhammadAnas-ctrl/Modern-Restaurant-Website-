@@ -9,97 +9,24 @@
 </head>
 <body>
 
-<header>
-  <div class="logo">STEAK</div>
-  <nav id="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
-</header>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Premium Steak & Oyster Bar</h1>
-    <p>Experience fine dining with classic elegance.</p>
-    <a href="menu.html" class="btn">View Menu</a>
-  </div>
-</section>
-
-<section class="reservations">
-
-  <div class="reservations-wrapper">
-
-    <h1 class="reservations-title">RESERVATIONS</h1>
-
-    <h2 class="reservations-subtitle">
-      Taking Reservations For All Occasions
-    </h2>
-
-    <p class="reservations-text">
-      To ensure a great dining experience, please book your table in advance.
-      Use our online system or contact us for larger groups.
-      We look forward to serving you!
-    </p>
-
-    <div class="reservation-box">
-
-      <h3>Make a Reservation</h3>
-
-      <div class="field">
-        <span class="field-icon">📅</span>
-        <input type="date">
-      </div>
-
-      <div class="field">
-        <span class="field-icon">🕒</span>
-        <input type="time">
-      </div>
-
-      <div class="field">
-        <span class="field-icon">👤</span>
-        <select>
-          <option>1 person</option>
-          <option selected>2 people</option>
-          <option>3 people</option>
-          <option>4 people</option>
-          <option>5+ people</option>
-        </select>
-      </div>
-
-      <button class="find-btn">Find a Table</button>
-
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">STEAK</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="contact.html" class="book-btn">Book a Table</a>
+        </div>
     </div>
+</nav>
 
-  </div>
 
-</section>
-  
-<section class="featured">
-  <h2>Featured Dishes</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/steak.jpg" alt="">
-      <h3>Prime Ribeye</h3>
-    </div>
-    <div class="card">
-      <img src="images/oysters.jpg" alt="">
-      <h3>Fresh Oysters</h3>
-    </div>
-    <div class="card">
-      <img src="images/wine.jpg" alt="">
-      <h3>Fine Wine Selection</h3>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Steakhouse | All Rights Reserved</p>
-</footer>
 
 <script src="Js/script.js"></script>
 </body>

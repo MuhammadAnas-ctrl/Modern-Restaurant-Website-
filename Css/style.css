@@ -1,267 +1,117 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* ================= GLOBAL ================= */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: #ffffff;
-  color: #222;
-  line-height: 1.6;
+body{
+  background:#ffffff;   /* FULL WEBSITE WHITE */
+  font-family:'Montserrat', sans-serif;
+  color:#222;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
-header {
-  position: fixed;
-  width: 100%;
-  background: #ffffff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 60px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  z-index: 1000;
+header{
+  background:#ffffff;
+  padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  letter-spacing: 3px;
-  color: #800000;
+.logo{
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  color:#000;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
+/* ================= HERO ================= */
+
+.hero{
+  height:80vh;
+  background:url('../images/hero.jpg') center/cover no-repeat;
 }
 
-nav ul li {
-  margin-left: 35px;
+/* ================= RESERVATION SECTION ================= */
+
+.reservations{
+  background:#7b0000;  /* MEHROON ONLY HERE */
+  padding:120px 20px;
+  text-align:center;
+  color:#ffffff;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-  transition: 0.3s;
+.reservations h1{
+  font-family:'Playfair Display', serif;
+  font-size:60px;
+  margin-bottom:25px;
 }
 
-nav ul li a:hover {
-  color: #800000;
+.reservations h2{
+  font-weight:400;
+  margin-bottom:20px;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero {
-  height: 100vh;
-  background: url('../images/hero.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin-top: 80px;
+.reservations p{
+  max-width:700px;
+  margin:0 auto 60px auto;
+  line-height:1.8;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(128,0,0,0.55);
+/* CARD */
+
+.reservation-box{
+  background:#eeeeee;
+  max-width:420px;
+  margin:0 auto;
+  padding:35px;
+  border-radius:8px;
+  text-align:left;
 }
 
-.hero-content {
-  position: relative;
-  color: #fff;
-  text-align: center;
+.reservation-box h3{
+  text-align:center;
+  margin-bottom:25px;
+  color:#333;
 }
 
-.hero-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  letter-spacing: 4px;
-}
+/* INPUTS */
 
-.hero-content p {
-  margin-top: 15px;
-  font-size: 20px;
-}
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 35px;
-  background: #800000;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #5c0000;
-}
-
-/* =========================
-   RESERVATIONS SECTION
-========================= */
-
-.reservations {
-  background: #800000;
-  padding: 120px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.reservations-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  margin-bottom: 25px;
-}
-
-.reservations-subtitle {
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-.reservations-text {
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-}
-
-.reservation-box {
-  background: #f4f4f4;
-  max-width: 450px;
-  margin: auto;
-  padding: 35px;
-  border-radius: 10px;
-}
-
-.reservation-box h3 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-.field {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 14px;
-  margin-bottom: 15px;
-  border-radius: 6px;
+.field{
+  display:flex;
+  align-items:center;
+  background:#ffffff;
+  border:1px solid #dcdcdc;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:6px;
 }
 
 .field input,
-.field select {
-  border: none;
-  width: 100%;
-  outline: none;
-  font-size: 16px;
+.field select{
+  border:none;
+  width:100%;
+  outline:none;
+  font-size:16px;
 }
 
-.find-btn {
-  width: 100%;
-  padding: 16px;
-  background: #800000;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+/* BUTTON */
+
+.find-btn{
+  width:100%;
+  padding:16px;
+  background:#d9363e;   /* RED BUTTON LIKE IMAGE */
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  font-weight:600;
+  cursor:pointer;
 }
 
-.find-btn:hover {
-  background: #5c0000;
+.find-btn:hover{
+  background:#b92a30;
 }
-
-/* =========================
-   MENU SECTION
-========================= */
-
-.menu-section {
-  padding: 120px 60px;
-  background: #ffffff;
-}
-
-.menu-section h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 42px;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #800000;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 0;
-  border-bottom: 1px solid #eee;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background: #800000;
-  color: #fff;
-  text-align: center;
-  padding: 40px;
-  margin-top: 60px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  header {
-    padding: 15px 20px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    background: #ffffff;
-    position: absolute;
-    top: 80px;
-    right: -100%;
-    width: 100%;
-    transition: 0.3s;
-  }
-
-  nav.active ul {
-    right: 0;
-  }
-
-  nav ul li {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .hero-content h1 {
-    font-size: 38px;
-  }
-
-  .reservations-title {
-    font-size: 40px;
-  }
-
-  }

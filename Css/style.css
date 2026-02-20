@@ -8,21 +8,21 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
-    padding-top: 90px; /* Prevents content from hiding under fixed nav */
+    color: #1a1a1a;
 }
 
-/* --- Navbar Base --- */
+/* --- Navbar Core --- */
 .navbar {
     background-color: #ffffff;
-    height: 90px;
+    height: 80px;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
     display: flex;
     align-items: center;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .nav-container {
@@ -36,16 +36,16 @@ body {
 
 .logo a {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     color: #000;
     text-decoration: none;
 }
 
-/* --- Desktop Navigation (The Fix) --- */
+/* --- Desktop View (Standard) --- */
 .nav-links {
-    display: flex; /* Forces links to show in a row on desktop */
+    display: flex; /* Forces links to show in a line on desktop */
     list-style: none;
     align-items: center;
 }
@@ -57,150 +57,73 @@ body {
 .nav-links a {
     text-decoration: none;
     color: #000;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Hide these on Desktop */
-.menu-toggle {
-    display: none; 
-}
-
-.mobile-only-item {
-    display: none;
-}
-
-/* Button Style */
+/* The "Book" Button */
 .book-btn {
-    padding: 10px 20px;
+    padding: 10px 18px;
     border: 1px solid #000;
     color: #000;
     text-decoration: none;
     font-size: 11px;
     text-transform: uppercase;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
-/* --- Mobile Responsiveness (Screen smaller than 992px) --- */
+.book-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* Hide mobile-only stuff on Desktop */
+.menu-toggle, .mobile-only-item {
+    display: none;
+}
+
+/* --- Mobile View (Responsive) --- */
 @media (max-width: 992px) {
-    .menu-toggle {
-        display: block; /* Hamburger appears */
-        font-size: 24px;
-        cursor: pointer;
-    }
-
+    /* Hide the normal desktop button */
     .nav-cta.desktop-only {
-        display: none; /* Desktop button disappears */
+        display: none;
     }
 
+    /* Show the hamburger icon */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 20px;
+    }
+
+    /* Show the button inside the mobile drawer */
     .mobile-only-item {
-        display: block; /* Mobile button appears in menu */
+        display: block;
+        margin-top: 20px;
     }
 
+    /* The Side Drawer */
     .nav-links {
-        display: flex; 
-        flex-direction: column;
         position: fixed;
         top: 0;
-        left: -100%; /* Hidden to the left */
-        background-color: #fff;
-        width: 70%;
+        left: -100%; /* Hidden */
+        width: 280px;
         height: 100vh;
-        padding-top: 100px;
-        transition: 0.4s ease-in-out;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+        background: #fff;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+        transition: 0.4s ease;
     }
 
-    /* When JS adds .active, it slides in */
+    /* When clicked, it slides in */
     .nav-links.active {
         left: 0;
     }
 
     .nav-links li {
-        margin: 20px 0;
-    }
-}    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-decoration: none;
-    letter-spacing: 4px;
-}
-
-/* --- Desktop Nav Links (FORCE VISIBLE) --- */
-.nav-links {
-    list-style: none;
-    display: flex; /* Always flex on desktop */
-    align-items: center;
-}
-
-.nav-links li {
-    margin: 0 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #1a1a1a;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-/* --- Desktop Logic: Hide Mobile Items --- */
-.menu-toggle {
-    display: none; /* Hidden on Desktop */
-}
-
-.mobile-only-item {
-    display: none; /* Hidden on Desktop */
-}
-
-.book-btn {
-    padding: 12px 28px;
-    border: 1px solid #1a1a1a;
-    color: #1a1a1a;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 2px;
-    transition: all 0.3s ease;
-}
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 992px) {
-    .nav-cta {
-        display: none; /* Hide desktop button */
-    }
-
-    .menu-toggle {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    .mobile-only-item {
-        display: block; /* Show button inside menu */
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        left: -100%; /* Hide off-screen */
-        height: 100vh;
-        width: 75%;
-        background-color: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        transition: 0.5s ease-in-out;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-
-    .nav-links.active {
-        left: 0; /* Slide in */
-    }
-
-    .nav-links li {
-        margin: 20px 0;
+        margin: 15px 0;
     }
 }

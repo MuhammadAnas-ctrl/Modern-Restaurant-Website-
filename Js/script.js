@@ -1,10 +1,10 @@
 const hamMenu = document.getElementById('ham-menu');
-const mobileDropdown = document.getElementById('mobile-dropdown');
+const navContainer = document.getElementById('nav-container');
 
 hamMenu.addEventListener('click', () => {
-    mobileDropdown.classList.toggle('show-menu');
+    navContainer.classList.toggle('active');
     
-    // Toggle icon between bars and X
+    // Toggle icon
     const icon = hamMenu.querySelector('i');
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-xmark');

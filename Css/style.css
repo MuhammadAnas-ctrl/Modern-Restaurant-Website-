@@ -84,36 +84,50 @@ body {
 }
 
 /* Mobile Responsiveness */
+/* Mobile Responsiveness - Dropdown Style */
 .menu-toggle {
     display: none;
     font-size: 24px;
     cursor: pointer;
+    color: #1a1a1a;
 }
 
 @media (max-width: 768px) {
-    .desktop-only { display: none; }
+    .desktop-only { 
+        display: none; 
+    }
     
-    .menu-toggle { display: block; }
+    .menu-toggle { 
+        display: block; 
+    }
 
     .nav-links {
         position: absolute;
-        top: 90px;
-        left: -100%; /* Hide off-screen */
-        flex-direction: column;
-        background-color: #ffffff;
+        /* Position it exactly at the bottom of the navbar */
+        top: -100vh; 
+        left: 0;
         width: 100%;
-        height: calc(100vh - 90px);
-        transition: 0.4s;
-        padding-top: 50px;
+        height: auto; /* It will grow based on content */
+        background-color: #ffffff;
+        flex-direction: column;
+        padding: 40px 0;
         text-align: center;
-        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eeeeee;
+        transition: all 0.5s ease-in-out; /* Smooth slide down */
+        z-index: -1; /* Sits behind the main bar */
+        box-shadow: 0px 10px 15px rgba(0,0,0,0.05);
     }
 
     .nav-links.active {
-        left: 0; /* Slide in */
+        top: 90px; /* Slides down to just below the navbar */
     }
 
     .nav-links li {
-        margin: 25px 0;
+        margin: 20px 0;
+        width: 100%;
+    }
+    
+    .mobile-only {
+        display: block;
     }
 }

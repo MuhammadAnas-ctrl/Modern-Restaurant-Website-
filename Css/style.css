@@ -9,10 +9,9 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
     color: #1a1a1a;
-    line-height: 1.6;
 }
 
-/* --- Navbar Main Styles --- */
+/* --- Navbar Main --- */
 .navbar {
     background-color: #ffffff;
     height: 90px;
@@ -21,9 +20,8 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Soft desktop shadow */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .nav-container {
@@ -44,10 +42,10 @@ body {
     letter-spacing: 4px;
 }
 
-/* --- Desktop Nav Links --- */
+/* --- Desktop Nav Links (FORCE VISIBLE) --- */
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Always flex on desktop */
     align-items: center;
 }
 
@@ -61,15 +59,18 @@ body {
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 400;
     transition: 0.3s;
 }
 
-.nav-links a:hover, .nav-links a.active {
-    color: #999;
+/* --- Desktop Logic: Hide Mobile Items --- */
+.menu-toggle {
+    display: none; /* Hidden on Desktop */
 }
 
-/* --- Buttons --- */
+.mobile-only-item {
+    display: none; /* Hidden on Desktop */
+}
+
 .book-btn {
     padding: 12px 28px;
     border: 1px solid #1a1a1a;
@@ -79,64 +80,41 @@ body {
     font-size: 11px;
     letter-spacing: 2px;
     transition: all 0.3s ease;
-    display: inline-block;
 }
 
-.book-btn:hover {
-    background-color: #1a1a1a;
-    color: #fff;
-}
-
-/* Desktop CTA visibility */
-.nav-cta {
-    display: block;
-}
-
-/* Mobile-only item hidden on desktop */
-.mobile-only-item {
-    display: none;
-}
-
-.menu-toggle {
-    display: none;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-/* --- Mobile Responsiveness (The Slide-out) --- */
+/* --- Mobile Responsiveness --- */
 @media (max-width: 992px) {
     .nav-cta {
-        display: none; /* Hides the desktop button */
+        display: none; /* Hide desktop button */
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Show hamburger on mobile */
     }
 
     .mobile-only-item {
-        display: block; /* Shows the button inside the menu */
-        margin-top: 20px;
+        display: block; /* Show button inside menu */
     }
 
     .nav-links {
         position: fixed;
         top: 0;
-        left: -100%; /* Hidden to the left */
+        left: -100%; /* Hide off-screen */
         height: 100vh;
-        width: 75%; /* Slide-out width */
+        width: 75%;
         background-color: #ffffff;
         flex-direction: column;
         justify-content: center;
         transition: 0.5s ease-in-out;
-        box-shadow: 10px 0 20px rgba(0,0,0,0.1); /* Side shadow */
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
         z-index: 999;
     }
 
     .nav-links.active {
-        left: 0; /* Slides into view */
+        left: 0; /* Slide in */
     }
 
     .nav-links li {
-        margin: 15px 0;
+        margin: 20px 0;
     }
 }

@@ -1,8 +1,11 @@
-function toggleMenu() {
-  document.getElementById("nav").classList.toggle("active");
-}
+const mobileMenu = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-window.addEventListener("scroll", function() {
-  const header = document.querySelector("header");
-  header.style.background = window.scrollY > 50 ? "#000" : "transparent";
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    
+    // Optional: Animate the icon
+    const icon = mobileMenu.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
 });

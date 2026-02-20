@@ -1,3 +1,7 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,46 +10,57 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #0d0d0d;
-  color: #fff;
+  background: #ffffff;
+  color: #222;
   line-height: 1.6;
 }
 
+/* =========================
+   HEADER
+========================= */
+
 header {
+  position: fixed;
+  width: 100%;
+  background: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 60px;
-  background: #000;
-  position: fixed;
-  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   z-index: 1000;
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 3px;
+  color: #800000;
 }
 
 nav ul {
-  display: flex;
   list-style: none;
+  display: flex;
 }
 
 nav ul li {
-  margin-left: 30px;
+  margin-left: 35px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #fff;
+  color: #222;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #c8a96a;
+  color: #800000;
 }
+
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero {
   height: 100vh;
@@ -53,237 +68,200 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  margin-top: 80px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(128,0,0,0.55);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
   text-align: center;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: 60px;
+  letter-spacing: 4px;
 }
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #c8a96a;
-  color: #000;
+  margin-top: 25px;
+  padding: 14px 35px;
+  background: #800000;
+  color: #fff;
   text-decoration: none;
+  border-radius: 6px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #fff;
+  background: #5c0000;
 }
 
-.featured {
-  padding: 100px 60px;
-  text-align: center;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.card {
-  background: #1a1a1a;
-  padding: 20px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-}
-
-.menu-section {
-  padding: 150px 60px 80px;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 0;
-  border-bottom: 1px solid #333;
-  padding-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #000;
-  margin-top: 50px;
-}
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* Responsive */
-@media(max-width: 768px){
-  nav {
-    position: absolute;
-    top: 80px;
-    right: -100%;
-    background: #000;
-    width: 100%;
-    transition: 0.3s;
-  }
-
-  nav ul {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  nav ul li {
-    margin: 20px 0;
-  }
-
-  nav.active {
-    right: 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .cards {
-    flex-direction: column;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-    }
-
-/* ===============================
+/* =========================
    RESERVATIONS SECTION
-================================ */
+========================= */
 
 .reservations {
-  background: #7a0c0c; /* deep steak red */
+  background: #800000;
   padding: 120px 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.reservations-wrapper {
-  max-width: 850px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* Main Title */
 .reservations-title {
   font-family: 'Playfair Display', serif;
-  font-size: 64px;
-  letter-spacing: 4px;
-  margin-bottom: 30px;
-}
-
-/* Subtitle */
-.reservations-subtitle {
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 60px;
   margin-bottom: 25px;
 }
 
-/* Description */
-.reservations-text {
-  font-size: 18px;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto 60px auto;
+.reservations-subtitle {
+  font-size: 26px;
+  margin-bottom: 20px;
 }
 
-/* ===============================
-   RESERVATION BOX
-================================ */
+.reservations-text {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
 
 .reservation-box {
-  background: #efefef;
-  max-width: 430px;
-  margin: 0 auto;
-  padding: 35px 30px;
-  border-radius: 8px;
-  text-align: left;
+  background: #f4f4f4;
+  max-width: 450px;
+  margin: auto;
+  padding: 35px;
+  border-radius: 10px;
 }
 
 .reservation-box h3 {
   text-align: center;
-  font-size: 22px;
-  margin-bottom: 25px;
-  color: #333;
+  margin-bottom: 20px;
+  color: #222;
 }
-
-/* Fields */
 
 .field {
   display: flex;
   align-items: center;
-  background: #ffffff;
-  border: 1px solid #d2d2d2;
-  padding: 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 14px;
   margin-bottom: 15px;
   border-radius: 6px;
-}
-
-.field-icon {
-  margin-right: 12px;
-  font-size: 18px;
 }
 
 .field input,
 .field select {
   border: none;
   width: 100%;
-  font-size: 16px;
   outline: none;
-  background: transparent;
+  font-size: 16px;
 }
-
-/* Button */
 
 .find-btn {
   width: 100%;
-  padding: 18px;
-  background: #d8333a;
+  padding: 16px;
+  background: #800000;
   color: white;
   border: none;
-  font-size: 18px;
-  font-weight: 600;
   border-radius: 6px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .find-btn:hover {
-  background: #b92a30;
+  background: #5c0000;
 }
 
-/* ===============================
+/* =========================
+   MENU SECTION
+========================= */
+
+.menu-section {
+  padding: 120px 60px;
+  background: #ffffff;
+}
+
+.menu-section h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #800000;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #800000;
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+}
+
+/* =========================
    RESPONSIVE
-================================ */
+========================= */
 
 @media (max-width: 768px) {
 
+  header {
+    padding: 15px 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 80px;
+    right: -100%;
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  nav.active ul {
+    right: 0;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
   .reservations-title {
-    font-size: 42px;
+    font-size: 40px;
   }
 
-  .reservations-subtitle {
-    font-size: 20px;
   }
-
-  .reservations-text {
-    font-size: 16px;
-  }
-
-  .reservation-box {
-    padding: 25px;
-  }
-
-}

@@ -101,33 +101,38 @@ body {
         display: block; 
     }
 
+    /* This is the container that slides out */
     .nav-links {
         position: absolute;
-        /* Position it exactly at the bottom of the navbar */
-        top: -100vh; 
+        /* Start it right at the top, behind the navbar */
+        top: 0; 
         left: 0;
         width: 100%;
-        height: auto; /* It will grow based on content */
+        height: auto;
         background-color: #ffffff;
         flex-direction: column;
-        padding: 40px 0;
+        padding: 20px 0 40px 0;
         text-align: center;
         border-bottom: 1px solid #eeeeee;
-        transition: all 0.5s ease-in-out; /* Smooth slide down */
-        z-index: -1; /* Sits behind the main bar */
-        box-shadow: 0px 10px 15px rgba(0,0,0,0.05);
+        
+        /* Smooth transition */
+        transition: transform 0.5s ease-in-out, opacity 0.3s ease;
+        
+        /* Hidden state: moved up and invisible */
+        transform: translateY(-100%); 
+        opacity: 0;
+        z-index: -1; /* Ensures it stays BEHIND the logo/bar */
     }
 
+    /* When clicked, it slides down into view */
     .nav-links.active {
-        top: 90px; /* Slides down to just below the navbar */
+        transform: translateY(90px); /* Moves it exactly below the 90px navbar */
+        opacity: 1;
     }
 
     .nav-links li {
         margin: 20px 0;
-        width: 100%;
-    }
-    
-    .mobile-only {
-        display: block;
     }
 }
+    
+

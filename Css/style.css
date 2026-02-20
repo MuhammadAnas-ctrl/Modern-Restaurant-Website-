@@ -8,25 +8,26 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #ffffff;
-    color: #1a1a1a;
+    padding-top: 90px; /* Prevents content from hiding under fixed nav */
 }
 
-/* --- Navbar Main --- */
+/* --- Navbar Base --- */
 .navbar {
     background-color: #ffffff;
     height: 90px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .nav-container {
-    width: 92%;
-    max-width: 1400px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -35,6 +36,91 @@ body {
 
 .logo a {
     font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* --- Desktop Navigation (The Fix) --- */
+.nav-links {
+    display: flex; /* Forces links to show in a row on desktop */
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hide these on Desktop */
+.menu-toggle {
+    display: none; 
+}
+
+.mobile-only-item {
+    display: none;
+}
+
+/* Button Style */
+.book-btn {
+    padding: 10px 20px;
+    border: 1px solid #000;
+    color: #000;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+/* --- Mobile Responsiveness (Screen smaller than 992px) --- */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block; /* Hamburger appears */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-cta.desktop-only {
+        display: none; /* Desktop button disappears */
+    }
+
+    .mobile-only-item {
+        display: block; /* Mobile button appears in menu */
+    }
+
+    .nav-links {
+        display: flex; 
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Hidden to the left */
+        background-color: #fff;
+        width: 70%;
+        height: 100vh;
+        padding-top: 100px;
+        transition: 0.4s ease-in-out;
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+    }
+
+    /* When JS adds .active, it slides in */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+}    font-family: 'Playfair Display', serif;
     font-size: 28px;
     font-weight: 700;
     color: #1a1a1a;
